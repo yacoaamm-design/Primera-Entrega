@@ -2,24 +2,23 @@ import random
 import string
 let_lower = string.ascii_lowercase
 
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
+categorias = {
+    "cortas": ["bucle","lista"],
+    "largas": ["python","programa","variable","funcion","cadena","entero"]
+}
 
-word = random.choice(words)
+print("¡Bienvenido al Ahorcado!")
+print("Categorias de palabras: cortas, largas")
+categoria = input("Ingrese la categoria que desea jugar: ")
+while categoria != "cortas" and categoria != "largas":
+    print("Categoria invalida")
+    categoria = input("Ingrese la categoria que desea jugar: ")
+      
+word = random.choice(categorias[categoria])
 guessed = []
 attempts = 6
 score = 0
 
-print("¡Bienvenido al Ahorcado!")
-print()
 
 while attempts > 0:
 
